@@ -1,0 +1,14 @@
+rem *** Add Unl_AV_Rifle ***
+weaponTemplate.create Unl_AV_Rifle
+weaponTemplate.indirect 0
+weaponTemplate.minRange 10.0
+weaponTemplate.maxRange 70.0
+weaponTemplate.optimalRangePercentage 85
+weaponTemplate.setFiringPose Crouching
+weaponTemplate.setStrength Infantry    0.0
+weaponTemplate.setStrength LightArmour 6.0
+weaponTemplate.setStrength HeavyArmour 8.0
+weaponTemplate.setStrength NavalArmour 2.0
+weaponTemplate.setStrength Helicopter  2.0
+weaponTemplate.setStrength AirPlane    1.0
+weaponTemplate.setFiresThroughTransparent 0

@@ -1,0 +1,15 @@
+rem *** Add Usrif_m16a2 ***
+weaponTemplate.create as_ar_rocket
+weaponTemplate.indirect 0
+weaponTemplate.minRange 8.0
+weaponTemplate.maxRange 55.0
+weaponTemplate.optimalRangePercentage 85
+weaponTemplate.setFiringPose Crouching
+weaponTemplate.setStrength Infantry    0.0
+weaponTemplate.setStrength LightArmour 10.0
+weaponTemplate.setStrength HeavyArmour 0.0
+weaponTemplate.setStrength NavalArmour 1.0
+weaponTemplate.setStrength Helicopter  1.0
+weaponTemplate.setStrength AirPlane    0.5
+weaponTemplate.setExplosionRadius 6.0
+weaponTemplate.setFiresThroughTransparent 0

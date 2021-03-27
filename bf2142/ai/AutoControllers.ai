@@ -1,0 +1,116 @@
+beginrem
+
+Create templates for auto controllers
+
+An auto controller allows you to have the AI control a playerControlObject of a weapon or vehicle
+This way you can create automatic weapons like the sentry gun in Battlefield 2142.
+
+Explanation of properties:
+
+operatesAlone:	If this is set to 0 the AI will only be activated if a player enters another pco of the vehicle.
+                E.g. You could have an automatic cannon on a vehicle that will activate and help the player driving the
+                vehicle
+
+scanningSpeed:  This is the speed at which the AI will scan the area for enemies.
+                Make sure that the MaxSpeed and Acceleration of the rotational bundle is set up so that the AI isn't restricted by it.
+
+fov: Field of view of the AI in degrees
+
+viewDistance: view distance of the AI in meters
+
+useSiren: if 1 the weapon will warn before opening fire. A horn template must be added to the AltFire button
+
+reactionTime: Time between first noticing an enemy and opening fire.
+
+targetLostTimeout: 	Time that AI will continue to look in the direction it last saw the enemy after it
+                    has lost sight of him.
+
+sendFireWarning: Will add flashing icon to minimap when firing
+
+reportEnemiesToTeam: Will report target enemy to team
+
+allowTakeOver:  Will allow player to enter position of autoController. AutoController will be activated
+                again when player exits pco.
+
+maxTrackingInput:   This is the maximum steering input allowed for the autoController while tracking an enemy.
+                    Decrease this is you want it to aim slower.
+
+checkLineOfFire: AI will not fire if a friendly soldier is in it's line of fire
+
+discoverCloakedEnemiesDistance: AI will detect enemies within this distance even if they are cloaked
+
+flipOutAtHealth: autoController will flip out when it's health goes below this value (0.1 = 10 percent of full health)
+
+scanningInputScale: Input to rotational bundle will be scaled with this value when autoController isn't firing
+                    and isn't flipping out. Use this to get a smooth scanning motion while still letting
+                    the rotation bunde keep a high maximum rotational speed (this is good when flipping out)
+
+scanningSpeedWhenFlippingOut : Use this scanning speed when the autoController flips out
+
+reloadOnTeamChange : Used only by the missile silos to force a reload delay of the weapon after it has been captured
+
+onlyAttackNetworkBattlefieldObjects :   If true, this autoController will only attack objects that are reported to it's
+                                        owners squad. I.e. player who owns the autoController must be in a squad or the
+                                        autoController will attack nothing. Default is false.
+
+simpleFirePlan:		An autoController with this property will do nothing but just fire it's weapon all the time
+                    This is used to make the recon drone keep firing as long as it's deployed
+
+endrem
+
+
+autoControllerTemplate.create SentryGun
+autoControllerTemplate.operatesAlone 1
+autoControllerTemplate.scanningSpeed 0.03
+autoControllerTemplate.fov 30
+autoControllerTemplate.accuracy 1
+autoControllerTemplate.viewDistance 63
+autoControllerTemplate.useSiren 1
+autoControllerTemplate.reactionTime 1
+autoControllerTemplate.targetLostTimeout 0.05
+autoControllerTemplate.sendFireWarning 1
+autoControllerTemplate.reportEnemiesToTeam 1
+autoControllerTemplate.allowTakeOver 0
+autoControllerTemplate.maxTrackingInput 1
+autoControllerTemplate.checkLineOfFire 1
+autoControllerTemplate.discoverCloakedEnemiesDistance 5
+autoControllerTemplate.flipOutAtHealth 0.25
+autoControllerTemplate.scanningInputScale 0.12
+
+autoControllerTemplate.create UAVDrone
+autoControllerTemplate.operatesAlone 1
+autoControllerTemplate.scanningSpeed 0.13
+autoControllerTemplate.fov 90
+autoControllerTemplate.accuracy 1
+autoControllerTemplate.viewDistance 100
+autoControllerTemplate.useSiren 1
+autoControllerTemplate.reactionTime 0
+autoControllerTemplate.targetLostTimeout 0.25
+autoControllerTemplate.sendFireWarning 1
+autoControllerTemplate.neverAttackDeployer 1
+autoControllerTemplate.reportEnemiesToTeam 1
+autoControllerTemplate.allowTakeOver 0
+autoControllerTemplate.maxTrackingInput 1
+autoControllerTemplate.checkLineOfFire 1
+autoControllerTemplate.discoverCloakedEnemiesDistance 8
+autoControllerTemplate.onlyAttackNetworkBattlefieldObjects 1
+
+autoControllerTemplate.create CP_CANNON
+autoControllerTemplate.operatesAlone 1
+autoControllerTemplate.scanningSpeed 0.15
+autoControllerTemplate.fov 179
+autoControllerTemplate.viewDistance 2000
+autoControllerTemplate.useSiren 0
+autoControllerTemplate.reactionTime 0
+autoControllerTemplate.targetLostTimeout 20
+autoControllerTemplate.neverAttackDeployer 1
+autoControllerTemplate.reportEnemiesToTeam 0
+autoControllerTemplate.allowTakeOver 0
+autoControllerTemplate.maxTrackingInput 0.5
+autoControllerTemplate.checkLineOfFire 0
+autoControllerTemplate.discoverCloakedEnemiesDistance 0
+autoControllerTemplate.reloadOnTeamChange 1
+
+autoControllerTemplate.create ReconDrone
+autoControllerTemplate.simpleFirePlan 1
+autoControllerTemplate.operatesAlone 1

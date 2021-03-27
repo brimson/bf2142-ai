@@ -1,0 +1,15 @@
+rem *** C4 ***
+weaponTemplate.create UNL_C4_AI
+weaponTemplate.weaponType C4
+weaponTemplate.indirect 0
+weaponTemplate.minRange 0.0
+weaponTemplate.maxRange 30.0
+weaponTemplate.isThrown 1
+weaponTemplate.optimalRangePercentage 1
+weaponTemplate.setStrength Infantry    0.0
+weaponTemplate.setStrength LightArmour 5.0
+weaponTemplate.setStrength HeavyArmour 10.0
+weaponTemplate.setStrength NavalArmour 2.0
+weaponTemplate.setStrength Helicopter  2.0
+weaponTemplate.setStrength AirPlane    2.0
+weaponTemplate.setSoundSphereRadius    30.0

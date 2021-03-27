@@ -1,0 +1,37 @@
+rem *** Plugins ***
+aiTemplatePlugIn.create Physical Recon_Drone_Physical
+aiTemplatePlugIn.setStrType Infantry
+
+aiTemplatePlugIn.create Armament Recon_Drone_Armament
+
+aiTemplatePlugIn.create Unit Recon_Drone_Unit
+aiTemplatePlugIn.equipmentTypeName Fixed
+aiTemplatePlugIn.setStrategicStrength 0 0
+aiTemplatePlugIn.setStrategicStrength 1 3
+
+aiTemplatePlugIn.create ControlInfo Recon_Drone_Ctrl
+aiTemplatePlugIn.driveTurnControl           PIYaw
+aiTemplatePlugIn.driveThrottleControl       PIThrottle
+aiTemplatePlugIn.aimHorizontalControl       PIMouseLookX
+aiTemplatePlugIn.aimVerticalControl         PIMouseLookY
+aiTemplatePlugIn.lookHorizontalControl      PIMouseLookX
+aiTemplatePlugIn.lookVerticalControl        PIMouseLookY
+aiTemplatePlugIn.proportionalConstant	   -3
+aiTemplatePlugIn.derivativeConstant	   -0.3   
+rem *** CHECK NONAI OBJECT.CON FOR THESE VALUES
+aiTemplatePlugIn.setCameraRelativeMinRotationDeg 0/-12/0
+aiTemplatePlugIn.setCameraRelativeMaxRotationDeg 0/40/0
+
+
+rem *** AITemplate ***
+aiTemplate.create Recon_Drone
+aiTemplate.addType ITUnit
+aiTemplate.addType ITGround
+aiTemplate.degeneration 15
+aiTemplate.allowedTimeDiff 3.0
+aiTemplate.basicTemp 10
+aiTemplate.commonKnowledge 0
+aiTemplate.addPlugIn Recon_Drone_Physical
+aiTemplate.addPlugIn Recon_Drone_Armament
+aiTemplate.addPlugIn Recon_Drone_Unit
+aiTemplate.addPlugIn Recon_Drone_Ctrl

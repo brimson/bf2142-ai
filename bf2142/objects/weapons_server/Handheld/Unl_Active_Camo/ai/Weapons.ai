@@ -1,0 +1,3 @@
+rem *** Unl_Active_Camo ***
+weaponTemplate.create Unl_Active_Camo
+weaponTemplate.weaponType Camouflage

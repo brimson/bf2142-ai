@@ -1,0 +1,469 @@
+rem  *** Set number of behaviours and id/name mappings ***
+aiSettings.setMaxNumberOfBehaviours 14
+aiSettings.setBehaviour 0  Avoid
+aiSettings.setBehaviour 1  MoveTo
+aiSettings.setBehaviour 2  Idle
+aiSettings.setBehaviour 3  Fire
+aiSettings.setBehaviour 4  Change
+aiSettings.setBehaviour 5  MedicAssist
+aiSettings.setBehaviour 6  Revive
+aiSettings.setBehaviour 7  c4
+aiSettings.setBehaviour 8  BridgeRepair
+aiSettings.setBehaviour 9  DefuseMines
+aiSettings.setBehaviour 10 Flee
+aiSettings.setBehaviour 11 RunOver
+aiSettings.setBehaviour 12 AmmoAssist
+aiSettings.setBehaviour 13 RepairVehicle
+
+rem *** Set number of vehicles and id/name mappings ***
+aiSettings.setVehicle Tank
+aiSettings.setVehicle Plane
+aiSettings.setVehicle Infantery
+aiSettings.setVehicle Fixed
+aiSettings.setVehicle Car
+aiSettings.setVehicle Helicopter
+aiSettings.setVehicle TransportHelicopter
+aiSettings.setVehicle ArmedCar
+aiSettings.setVehicle ManDown
+aiSettings.setVehicle ParatrooperFixed
+aiSettings.setVehicle Mech
+aiSettings.setVehicle AirTransport
+aiSettings.setVehicle FloatingTank
+
+aiSettings.setVehicleClusterMapping Tank            Tank
+aiSettings.setVehicleClusterMapping Infantery       Infantery
+aiSettings.setVehicleClusterMapping Car             Tank
+aiSettings.setVehicleClusterMapping ArmedCar        Tank
+aiSettings.setVehicleClusterMapping Mech            Tank
+aiSettings.setVehicleClusterMapping FloatingTank    Tank
+
+rem *** Set Sensing Agent Patterns id/name mappings ***
+aiSettings.setSensingAgentPatternName Turret
+aiSettings.setSensingAgentPatternName MouseFreeLook
+aiSettings.setSensingAgentPatternName Soldier
+aiSettings.setSensingAgentPatternName Null
+rem the null pattern
+aiSettings.setSensingAgentNullPattern Null
+
+aiSettings.setManDownEquipment ManDown
+
+rem *** IMPORTANT !!! **************************
+rem * NEVER ALLOW IDLE's urgency to become 0.  *
+rem * The AI will CRASH in that case.          *
+rem *** REMINDER *******************************
+
+rem *** Construct unit weights ***
+aiSettings.createBehaviourModifiers         UnitWeights
+aiSettings.setBehaviourModifier Avoid           1.0
+aiSettings.setBehaviourModifier MoveTo          1.0
+aiSettings.setBehaviourModifier Idle            1.0
+aiSettings.setBehaviourModifier Fire            1.0
+aiSettings.setBehaviourModifier MedicAssist     1.0
+aiSettings.setBehaviourModifier Change          1.0
+aiSettings.setBehaviourModifier Revive          1.0
+aiSettings.setBehaviourModifier c4              1.0
+aiSettings.setBehaviourModifier BridgeRepair    1.0
+aiSettings.setBehaviourModifier DefuseMines     1.0
+aiSettings.setBehaviourModifier Flee            1.0
+aiSettings.setBehaviourModifier RunOver         1.0
+aiSettings.setBehaviourModifier AmmoAssist      1.0
+aiSettings.setBehaviourModifier RepairVehicle   1.0
+
+rem *** Construct Fixed Turret Weights ***
+aiSettings.createBehaviourModifiers      FixedTurretWeights
+aiSettings.setBehaviourModifier Avoid           1.0
+aiSettings.setBehaviourModifier MoveTo          1.0
+aiSettings.setBehaviourModifier Idle            0.01
+aiSettings.setBehaviourModifier Fire            7.5
+aiSettings.setBehaviourModifier MedicAssist     1.0
+aiSettings.setBehaviourModifier Change          0.1
+aiSettings.setBehaviourModifier Revive          1.0
+aiSettings.setBehaviourModifier c4              1.0
+aiSettings.setBehaviourModifier BridgeRepair    1.0
+aiSettings.setBehaviourModifier DefuseMines     1.0
+aiSettings.setBehaviourModifier Flee            1.0
+aiSettings.setBehaviourModifier RunOver         1.0
+aiSettings.setBehaviourModifier AmmoAssist      1.0
+aiSettings.setBehaviourModifier RepairVehicle   1.0
+
+rem *** Construct HeliMove weights ***
+aiSettings.createBehaviourModifiers         HeliMoveWeights
+aiSettings.setBehaviourModifier Avoid           1.0
+aiSettings.setBehaviourModifier MoveTo          1.0
+aiSettings.setBehaviourModifier Idle            0.01
+aiSettings.setBehaviourModifier Fire            1.0
+aiSettings.setBehaviourModifier MedicAssist     1.0
+aiSettings.setBehaviourModifier Change          1.0
+aiSettings.setBehaviourModifier c4              1.0
+aiSettings.setBehaviourModifier BridgeRepair    1.0
+aiSettings.setBehaviourModifier DefuseMines     1.0
+aiSettings.setBehaviourModifier Flee            1.0
+aiSettings.setBehaviourModifier RunOver         1.0
+aiSettings.setBehaviourModifier AmmoAssist      1.0
+aiSettings.setBehaviourModifier RepairVehicle   1.0
+
+rem *** Construct standard weights ***
+aiSettings.createBehaviourModifiers         StandardWeights
+aiSettings.setBehaviourModifier Avoid           1.0
+aiSettings.setBehaviourModifier MoveTo          1.25
+aiSettings.setBehaviourModifier Idle            0.1
+aiSettings.setBehaviourModifier Fire            7.5
+aiSettings.setBehaviourModifier MedicAssist     3.0
+aiSettings.setBehaviourModifier Change          1.9
+aiSettings.setBehaviourModifier Revive          3.0
+aiSettings.setBehaviourModifier c4              1.0
+aiSettings.setBehaviourModifier BridgeRepair    1.0
+aiSettings.setBehaviourModifier DefuseMines     1.0
+aiSettings.setBehaviourModifier Flee            1.0
+aiSettings.setBehaviourModifier RunOver         1.0
+aiSettings.setBehaviourModifier AmmoAssist      1.0
+aiSettings.setBehaviourModifier RepairVehicle   1.0
+
+rem *** Construct Avoid inhibitors ***
+aiSettings.createBehaviourModifiers         AvoidInhibit
+aiSettings.setBehaviourModifier Avoid           1.0
+aiSettings.setBehaviourModifier MoveTo          0.3
+aiSettings.setBehaviourModifier Idle            1.0
+aiSettings.setBehaviourModifier Fire            1.0
+aiSettings.setBehaviourModifier MedicAssist     0.5
+aiSettings.setBehaviourModifier Change          1.0
+aiSettings.setBehaviourModifier Revive          1.0
+aiSettings.setBehaviourModifier c4              1.0
+aiSettings.setBehaviourModifier BridgeRepair    1.0
+aiSettings.setBehaviourModifier DefuseMines     1.0
+aiSettings.setBehaviourModifier Flee            1.0
+aiSettings.setBehaviourModifier RunOver         1.0
+aiSettings.setBehaviourModifier AmmoAssist      1.0
+aiSettings.setBehaviourModifier RepairVehicle   1.0
+
+rem *** Construct Change Inhibit ***
+aiSettings.createBehaviourModifiers     ChangeInhibit
+aiSettings.setBehaviourModifier Avoid         0.8
+aiSettings.setBehaviourModifier MoveTo        0.0
+aiSettings.setBehaviourModifier Idle          0.01
+aiSettings.setBehaviourModifier Fire          0.75
+aiSettings.setBehaviourModifier MedicAssist   0.0
+aiSettings.setBehaviourModifier Change        1.0
+aiSettings.setBehaviourModifier Revive        1.0
+aiSettings.setBehaviourModifier c4            1.0
+aiSettings.setBehaviourModifier BridgeRepair  1.0
+aiSettings.setBehaviourModifier DefuseMines   1.0
+aiSettings.setBehaviourModifier Flee          1.0
+aiSettings.setBehaviourModifier RunOver       1.0
+aiSettings.setBehaviourModifier AmmoAssist    1.0
+aiSettings.setBehaviourModifier RepairVehicle 1.0
+
+rem *** Construct Plane Weights ***
+aiSettings.createBehaviourModifiers     PlaneWeights
+aiSettings.setBehaviourModifier Avoid         0.1
+aiSettings.setBehaviourModifier MoveTo        1.0
+aiSettings.setBehaviourModifier Idle          0.1
+aiSettings.setBehaviourModifier Fire          1.5
+aiSettings.setBehaviourModifier MedicAssist   1.0
+aiSettings.setBehaviourModifier Change        0.1
+aiSettings.setBehaviourModifier Revive        1.0
+aiSettings.setBehaviourModifier c4            1.0
+aiSettings.setBehaviourModifier BridgeRepair  1.0
+aiSettings.setBehaviourModifier DefuseMines   1.0
+aiSettings.setBehaviourModifier Flee          1.0
+aiSettings.setBehaviourModifier RunOver       1.0
+aiSettings.setBehaviourModifier AmmoAssist    1.0
+aiSettings.setBehaviourModifier RepairVehicle 1.0
+
+rem *** Construct Car Weights ***
+aiSettings.createBehaviourModifiers CarWeights
+aiSettings.setBehaviourModifier Avoid         1.0
+aiSettings.setBehaviourModifier MoveTo        1.0
+aiSettings.setBehaviourModifier Idle          0.1
+aiSettings.setBehaviourModifier Fire          7.5
+aiSettings.setBehaviourModifier MedicAssist   1.0
+aiSettings.setBehaviourModifier Change        0.05
+aiSettings.setBehaviourModifier Revive        1.0
+aiSettings.setBehaviourModifier c4            1.0
+aiSettings.setBehaviourModifier BridgeRepair  1.0
+aiSettings.setBehaviourModifier DefuseMines   1.0
+aiSettings.setBehaviourModifier Flee          1.0
+aiSettings.setBehaviourModifier RunOver       1.0
+aiSettings.setBehaviourModifier AmmoAssist    1.0
+aiSettings.setBehaviourModifier RepairVehicle 1.0
+
+rem *** Construct Armed Car Weights ***
+aiSettings.createBehaviourModifiers ArmedCarWeights
+aiSettings.setBehaviourModifier Avoid         1.0
+aiSettings.setBehaviourModifier MoveTo        1.0
+aiSettings.setBehaviourModifier Idle          0.1
+aiSettings.setBehaviourModifier Fire          7.5
+aiSettings.setBehaviourModifier MedicAssist   1.0
+aiSettings.setBehaviourModifier Change        0.01
+aiSettings.setBehaviourModifier Revive        1.0
+aiSettings.setBehaviourModifier c4            1.0
+aiSettings.setBehaviourModifier BridgeRepair  1.0
+aiSettings.setBehaviourModifier DefuseMines   1.0
+aiSettings.setBehaviourModifier Flee          1.0
+aiSettings.setBehaviourModifier RunOver       1.0
+aiSettings.setBehaviourModifier AmmoAssist    1.0
+aiSettings.setBehaviourModifier RepairVehicle 1.0
+
+rem *** Set basic weights for bot behaviour ***
+aiSettings.setBasicBotWeights UnitWeights
+aiSettings.setStandardPersonality UnitWeights 1
+aiSettings.setStandardPersonality UnitWeights 2
+
+rem ************************* Vehicle behaviour setup ******************************
+
+aiSettings.createUCConstant UCUnion         1.0
+aiSettings.createUCLinear   UCFire         -0.22 1.3
+aiSettings.createUCLinear   UCCallForMedic  0.1 1
+aiSettings.createUCXInverse UCScout         2.5 0.9 1.0 0.5
+
+rem *** Tank Behaviour setup ***
+aisettings.setVehicleMods               Tank    StandardWeights
+aiSettings.setVehicleMaterialCost       Tank    Ground     1
+aiSettings.setVehicleMaterialCost       Tank    Road       1
+aiSettings.setVehicleMaterialCost       Tank    Shallows   1.5
+aiSettings.setVehicleMaterialCost       Tank    DeepWater -1
+aiSettings.setVehicleBehaviour          Tank    Avoid           BBAvoid         BBPAvoidCollision2d 1   UCUnion AvoidInhibit
+aiSettings.setVehicleBehaviour          Tank    MoveTo          BBMoveTo        BBPGotoWaypoint2d   4   UCUnion FixedTurretWeights
+aiSettings.setVehicleBehaviour          Tank    Idle            BBIdle          BBPIdle2d           5   UCUnion FixedTurretWeights
+aiSettings.setVehicleBehaviour          Tank    Fire            BBFireInfantery BBPFireInfantery    4   UCFire  FixedTurretWeights
+aiSettings.setVehicleBehaviour          Tank    BridgeRepair    BBBridgeRepair  BBPBridgeRepair     15  UCUnion FixedTurretWeights
+aiSettings.setVehicleBehaviour          Tank    DefuseMines     BBDefuseMines   BBPDefuseMines      13  UCUnion FixedTurretWeights
+aiSettings.setVehicleBehaviour          Tank    Change          BBChange        BBPChange           6   UCUnion ChangeInhibit
+aiSettings.addInterpreterEntry          Tank    InfoWrapper
+aiSettings.addInterpreterEntry          Tank    TankMoveTo
+aiSettings.addInterpreterEntry          Tank    TankMoveToObject
+aiSettings.addInterpreterEntry          Tank    Trigger
+aiSettings.addInterpreterEntry          Tank    TriggerContinously
+aiSettings.addInterpreterEntry          Tank    MouseTurretAimAt
+aiSettings.addInterpreterEntry          Tank    TankResetControls
+aiSettings.addInterpreterEntry          Tank    MouseTurretLookAt
+aiSettings.addInterpreterEntry          Tank    Sense
+aiSettings.addSensingAgentPattern       Tank    Turret
+aiSettings.setVehicleDefaultBehaviour   Tank    Idle
+
+rem *** Floating FloatingTank Behaviour setup ***
+aisettings.setVehicleMods               FloatingTank    StandardWeights
+aiSettings.setVehicleMaterialCost       FloatingTank    Ground     1
+aiSettings.setVehicleMaterialCost       FloatingTank    Road       1
+aiSettings.setVehicleMaterialCost       FloatingTank    Shallows   1.5
+aiSettings.setVehicleMaterialCost       FloatingTank    DeepWater -1
+aiSettings.setVehicleBehaviour          FloatingTank    Avoid           BBAvoid         BBPAvoidCollision2d 1   UCUnion AvoidInhibit
+aiSettings.setVehicleBehaviour          FloatingTank    MoveTo          BBMoveTo        BBPGotoWaypoint2d   4   UCUnion StandardWeights
+aiSettings.setVehicleBehaviour          FloatingTank    Idle            BBIdle          BBPIdle2d           5   UCUnion StandardWeights
+aiSettings.setVehicleBehaviour          FloatingTank    Fire            BBFireInfantery BBPFireInfantery    4   UCFire  StandardWeights
+aiSettings.setVehicleBehaviour          FloatingTank    BridgeRepair    BBBridgeRepair  BBPBridgeRepair     15  UCUnion StandardWeights
+aiSettings.setVehicleBehaviour          FloatingTank    DefuseMines     BBDefuseMines   BBPDefuseMines      13  UCUnion StandardWeights
+aiSettings.setVehicleBehaviour          FloatingTank    Change          BBChange        BBPChange           6   UCUnion ChangeInhibit
+aiSettings.addInterpreterEntry          FloatingTank    InfoWrapper
+aiSettings.addInterpreterEntry          FloatingTank    FloatingTankMoveTo
+aiSettings.addInterpreterEntry          FloatingTank    FloatingTankMoveToObject
+aiSettings.addInterpreterEntry          FloatingTank    Trigger
+aiSettings.addInterpreterEntry          FloatingTank    TriggerContinously
+aiSettings.addInterpreterEntry          FloatingTank    MouseTurretAimAt
+aiSettings.addInterpreterEntry          FloatingTank    TankResetControls
+aiSettings.addInterpreterEntry          FloatingTank    MouseTurretLookAt
+aiSettings.addInterpreterEntry          FloatingTank    Sense
+aiSettings.addSensingAgentPattern       FloatingTank    Null
+aiSettings.setVehicleDefaultBehaviour   FloatingTank    MoveTo
+
+rem *** Mech Behaviour setup ***
+aisettings.setVehicleMods               Mech    StandardWeights
+aiSettings.setVehicleMaterialCost       Mech    Ground     1
+aiSettings.setVehicleMaterialCost       Mech    Road       1
+aiSettings.setVehicleMaterialCost       Mech    Shallows   1.5
+aiSettings.setVehicleMaterialCost       Mech    DeepWater -1
+aiSettings.setVehicleBehaviour          Mech    Avoid           BBAvoid         BBPAvoidCollision2d	1   UCUnion AvoidInhibit
+aiSettings.setVehicleBehaviour          Mech    MoveTo          BBMoveTo        BBPGotoWaypoint2d   4   UCUnion FixedTurretWeights
+aiSettings.setVehicleBehaviour          Mech    Idle            BBIdle          BBPIdle2d           5   UCUnion FixedTurretWeights
+aiSettings.setVehicleBehaviour          Mech    Fire            BBFireInfantery BBPFireInfantery    4   UCFire  FixedTurretWeights
+aiSettings.setVehicleBehaviour          Mech    BridgeRepair    BBBridgeRepair  BBPBridgeRepair     15  UCUnion FixedTurretWeights
+aiSettings.setVehicleBehaviour          Mech    DefuseMines     BBDefuseMines   BBPDefuseMines      13  UCUnion FixedTurretWeights
+aiSettings.setVehicleBehaviour          Mech    Change          BBChange        BBPChange           6   UCUnion ChangeInhibit
+aiSettings.addInterpreterEntry          Mech    InfoWrapper
+aiSettings.addInterpreterEntry          Mech    MechMoveTo
+aiSettings.addInterpreterEntry          Mech    MechMoveToObject
+aiSettings.addInterpreterEntry          Mech    Trigger
+aiSettings.addInterpreterEntry          Mech    TriggerContinously
+aiSettings.addInterpreterEntry          Mech    MouseTurretAimAt
+aiSettings.addInterpreterEntry          Mech    MechResetControls
+aiSettings.addInterpreterEntry          Mech    MouseTurretLookAt
+aiSettings.addInterpreterEntry          Mech    Sense
+aiSettings.addSensingAgentPattern       Mech    Turret
+aiSettings.setVehicleDefaultBehaviour   Mech    Idle
+
+rem *** Plane Behaviour setup ***
+aisettings.setVehicleMods               Plane   StandardWeights
+aiSettings.setVehicleBehaviour          Plane   MoveTo  BBMoveTo    BBPGotoWaypoint3d   4 UCUnion PlaneWeights
+aiSettings.setVehicleBehaviour          Plane   Idle    BBIdle      BBPIdle3d           5 UCUnion PlaneWeights
+aiSettings.setVehicleBehaviour          Plane   Fire    BBFire3d    BBPFire3d           4 UCFire  PlaneWeights
+aiSettings.setVehicleBehaviour          Plane   Change  BBChange    BBPChange           6 UCUnion ChangeInhibit
+aiSettings.addInterpreterEntry          Plane   InfoWrapper
+aiSettings.addInterpreterEntry          Plane   PlaneMoveTo
+aiSettings.addInterpreterEntry          Plane   PlaneMoveToObject
+aiSettings.addInterpreterEntry          Plane   Trigger
+aiSettings.addInterpreterEntry          Plane   TriggerContinously
+aiSettings.addInterpreterEntry          Plane   PlaneAimAt
+aiSettings.addInterpreterEntry          Plane   PlaneResetControls
+aiSettings.addInterpreterEntry          Plane   Sense
+aiSettings.setVehicleDefaultBehaviour   Plane   MoveTo
+
+rem *** Infantery Behaviour setup ***
+aisettings.setVehicleMods               Infantery   StandardWeights
+aiSettings.setVehicleMaterialCost       Infantery   Ground     1
+aiSettings.setVehicleMaterialCost       Infantery   Road       1
+aiSettings.setVehicleMaterialCost       Infantery   Shallows   1.5
+aiSettings.setVehicleMaterialCost       Infantery   DeepWater  6
+aiSettings.setVehicleBehaviour          Infantery   Avoid           BBAvoid         BBPAvoidCollisionInfantery  1   UCUnion AvoidInhibit
+aiSettings.setVehicleBehaviour          Infantery   MoveTo          BBMoveTo        BBPGotoWaypointInfantery    4   UCUnion StandardWeights
+aiSettings.setVehicleBehaviour          Infantery   Idle            BBIdle          BBPIdleInfantery            5   UCUnion StandardWeights
+aiSettings.setVehicleBehaviour          Infantery   Fire            BBFireInfantery BBPFireInfantery            4   UCFire  StandardWeights
+aiSettings.setVehicleBehaviour          Infantery   MedicAssist     BBMedicAssist   BBPMedicAssist              10  UCUnion StandardWeights
+aiSettings.setVehicleBehaviour          Infantery   AmmoAssist      BBAmmoAssist    BBPAmmoAssist               12  UCUnion StandardWeights
+aiSettings.setVehicleBehaviour          Infantery   RepairVehicle   BBRepairVehicle BBPRepairVehicle            10  UCUnion StandardWeights
+aiSettings.setVehicleBehaviour          Infantery   BridgeRepair    BBBridgeRepair  BBPBridgeRepair             15  UCUnion StandardWeights
+aiSettings.setVehicleBehaviour          Infantery   c4              BBC4            BBPC4                       11  UCUnion StandardWeights
+aiSettings.setVehicleBehaviour          Infantery   DefuseMines	    BBDefuseMines   BBPDefuseMines              13  UCUnion StandardWeights
+aiSettings.setVehicleBehaviour          Infantery   Change          BBChange        BBPChange                   6   UCUnion StandardWeights
+aiSettings.setVehicleBehaviour          Infantery   Revive          BBRevive        BBPRevive                   8   UCUnion StandardWeights
+aiSettings.setVehicleBehaviour          Infantery   Flee            BBFlee          BBPFlee                     7   UCUnion StandardWeights
+aiSettings.addInterpreterEntry          Infantery   InfoWrapper
+aiSettings.addInterpreterEntry          Infantery   InfanteryMoveTo
+aiSettings.addInterpreterEntry          Infantery   InfanteryMoveToObject
+aiSettings.addInterpreterEntry          Infantery   Trigger
+aiSettings.addInterpreterEntry          Infantery   TriggerContinously
+aiSettings.addInterpreterEntry          Infantery   MouseTurretAimAt
+aiSettings.addInterpreterEntry          Infantery   InfanteryResetControls
+aiSettings.addInterpreterEntry          Infantery   MouseTurretLookAt
+aiSettings.addInterpreterEntry          Infantery   Sense
+aiSettings.addInterpreterEntry          Infantery   SoldierPose
+aiSettings.addSensingAgentPattern       Infantery   Soldier
+aiSettings.setVehicleDefaultBehaviour   Infantery   MoveTo
+
+rem *** Fixed Behaviour setup ***
+aisettings.setVehicleMods               Fixed   StandardWeights
+aiSettings.setVehicleBehaviour          Fixed   Idle            BBIdle              BBPIdle2d           5   UCUnion FixedTurretWeights
+aiSettings.setVehicleBehaviour          Fixed   Fire            BBFireInfantery     BBPFireInfantery    4   UCFire  FixedTurretWeights
+aiSettings.setVehicleBehaviour          Fixed   Change          BBChange            BBPChange           6   UCUnion FixedTurretWeights
+aiSettings.setVehicleBehaviour          Fixed   BridgeRepair    BBBridgeRepair      BBPBridgeRepair     15  UCUnion FixedTurretWeights
+aiSettings.setVehicleBehaviour          Fixed   DefuseMines     BBDefuseMines       BBPDefuseMines      13  UCUnion FixedTurretWeights
+aiSettings.addInterpreterEntry          Fixed   InfoWrapper
+aiSettings.addInterpreterEntry          Fixed   Trigger
+aiSettings.addInterpreterEntry          Fixed   TriggerContinously
+aiSettings.addInterpreterEntry          Fixed   MouseTurretAimAt
+aiSettings.addInterpreterEntry          Fixed   MouseTurretLookAt
+aiSettings.addInterpreterEntry          Fixed   Sense
+aiSettings.addInterpreterEntry          Fixed   InfanteryResetControls
+aiSettings.addSensingAgentPattern       Fixed   Turret
+aiSettings.setVehicleDefaultBehaviour   Fixed   Idle
+
+rem *** Car Behaviour setup ***
+aisettings.setVehicleMods               Car StandardWeights
+aiSettings.setVehicleMaterialCost       Car Ground     1
+aiSettings.setVehicleMaterialCost       Car Road       1
+aiSettings.setVehicleMaterialCost       Car Shallows   1.8
+aiSettings.setVehicleMaterialCost       Car DeepWater -1
+aiSettings.setVehicleBehaviour          Car Avoid           BBAvoid             BBPAvoidCollision2d 1   UCUnion AvoidInhibit
+aiSettings.setVehicleBehaviour          Car MoveTo          BBMoveTo            BBPGotoWaypoint2d   4   UCUnion CarWeights
+aiSettings.setVehicleBehaviour          Car Idle            BBIdle              BBPIdle2d           5   UCUnion CarWeights
+aiSettings.setVehicleBehaviour          Car Change          BBChange            BBPChange           2   UCUnion CarWeights
+aiSettings.setVehicleBehaviour          Car RunOver         BBRunOverSoldier    BBPRunOverSoldier   6   UCUnion CarWeights
+aiSettings.setVehicleBehaviour          Car BridgeRepair    BBBridgeRepair      BBPBridgeRepair     15  UCUnion CarWeights
+aiSettings.setVehicleBehaviour          Car DefuseMines     BBDefuseMines       BBPDefuseMines      13  UCUnion CarWeights
+aiSettings.addInterpreterEntry          Car CarResetControls
+aiSettings.addInterpreterEntry          Car InfoWrapper
+aiSettings.addInterpreterEntry          Car CarMoveTo
+aiSettings.addInterpreterEntry          Car CarMoveToObject
+aiSettings.addInterpreterEntry          Car Trigger
+aiSettings.addInterpreterEntry          Car TriggerContinously
+aiSettings.addInterpreterEntry          Car MouseTurretAimAt
+aiSettings.addInterpreterEntry          Car MouseTurretLookAt
+aiSettings.addInterpreterEntry          Car Sense
+aiSettings.setVehicleDefaultBehaviour   Car MoveTo
+
+rem ***** HeliBehaviour setup ***
+aisettings.setVehicleMods               Helicopter  StandardWeights
+aiSettings.setVehicleBehaviour          Helicopter  MoveTo  BBMoveTo    BBPGotoWaypoint3d   4   UCUnion HeliMoveWeights
+aiSettings.setVehicleBehaviour          Helicopter  Idle    BBIdle      BBPIdle3d           5   UCUnion HeliMoveWeights
+aiSettings.setVehicleBehaviour          Helicopter  Fire    BBFire3d    BBPHeliFire3d       4   UCFire  HeliMoveWeights
+aiSettings.setVehicleBehaviour          Helicopter  Change  BBChange    BBPChange           6   UCUnion ChangeInhibit
+aiSettings.addInterpreterEntry          Helicopter  InfoWrapper
+aiSettings.addInterpreterEntry          Helicopter  HeliMoveTo
+aiSettings.addInterpreterEntry          Helicopter  HeliMoveToObject
+aiSettings.addInterpreterEntry          Helicopter 	HeliMoveAwayFromObject
+aiSettings.addInterpreterEntry          Helicopter  Trigger
+aiSettings.addInterpreterEntry          Helicopter  TriggerContinously
+aiSettings.addInterpreterEntry          Helicopter  HeliAimAt
+aiSettings.addInterpreterEntry          Helicopter  HeliResetControls
+aiSettings.addInterpreterEntry          Helicopter  Sense
+aiSettings.setVehicleDefaultBehaviour   Helicopter  MoveTo
+
+rem ***** TransportHelicopterBehaviour setup ***
+aisettings.setVehicleMods               TransportHelicopter StandardWeights
+aiSettings.setVehicleBehaviour          TransportHelicopter MoveTo  BBMoveTo                BBPGotoWaypoint3d   4   UCUnion HeliMoveWeights
+aiSettings.setVehicleBehaviour          TransportHelicopter Idle    BBIdle                  BBPIdle3d           5   UCUnion HeliMoveWeights
+aiSettings.setVehicleBehaviour          TransportHelicopter Change  BBChangeLandingCraft    BBPChange           6   UCUnion ChangeInhibit
+aiSettings.addInterpreterEntry          TransportHelicopter InfoWrapper
+aiSettings.addInterpreterEntry          TransportHelicopter HeliMoveTo
+aiSettings.addInterpreterEntry          TransportHelicopter Trigger
+aiSettings.addInterpreterEntry          TransportHelicopter HeliResetControls
+aiSettings.addInterpreterEntry          TransportHelicopter Sense
+aiSettings.setVehicleDefaultBehaviour   TransportHelicopter MoveTo
+
+rem ***** AirTransportBehaviour setup ***
+aisettings.setVehicleMods               AirTransport    StandardWeights
+aiSettings.setVehicleBehaviour          AirTransport    MoveTo  BBMoveTo                BBPGotoWaypoint3d   4 UCUnion HeliMoveWeights
+aiSettings.setVehicleBehaviour          AirTransport    Idle    BBIdle                  BBPIdle3d           5 UCUnion HeliMoveWeights
+aiSettings.setVehicleBehaviour          AirTransport    Change  BBChangeLandingCraft    BBPChange           6 UCUnion ChangeInhibit
+aiSettings.addInterpreterEntry          AirTransport    InfoWrapper
+aiSettings.addInterpreterEntry          AirTransport    AirTransportMoveTo
+aiSettings.addInterpreterEntry          AirTransport    Trigger
+aiSettings.addInterpreterEntry          AirTransport    HeliResetControls
+aiSettings.addInterpreterEntry          AirTransport    Sense
+aiSettings.setVehicleDefaultBehaviour   AirTransport    MoveTo
+
+rem *** Armed Car ***
+aisettings.setVehicleMods               ArmedCar    StandardWeights
+aiSettings.setVehicleMaterialCost       ArmedCar    Ground     1
+aiSettings.setVehicleMaterialCost       ArmedCar    Road       1
+aiSettings.setVehicleMaterialCost       ArmedCar    Shallows   1
+aiSettings.setVehicleMaterialCost       ArmedCar    DeepWater  2
+aiSettings.setVehicleBehaviour          ArmedCar    Avoid           BBAvoid         BBPAvoidCollision2d 1   UCUnion AvoidInhibit
+aiSettings.setVehicleBehaviour          ArmedCar    MoveTo          BBMoveTo        BBPGotoWaypoint2d   4   UCUnion ArmedCarWeights
+aiSettings.setVehicleBehaviour          ArmedCar    Idle            BBIdle          BBPIdle2d           5   UCUnion ArmedCarWeights
+aiSettings.setVehicleBehaviour          ArmedCar    Change          BBChange        BBPChange           2   UCUnion ArmedCarWeights
+aiSettings.setVehicleBehaviour          ArmedCar    Fire            BBFireInfantery BBPFireInfantery    4   UCFire  ArmedCarWeights
+aiSettings.setVehicleBehaviour          ArmedCar    BridgeRepair    BBBridgeRepair  BBPBridgeRepair     15  UCUnion ArmedCarWeights
+aiSettings.setVehicleBehaviour          ArmedCar    DefuseMines     BBDefuseMines   BBPDefuseMines      13  UCUnion ArmedCarWeights
+aiSettings.addInterpreterEntry          ArmedCar    CarResetControls
+aiSettings.addInterpreterEntry          ArmedCar    InfoWrapper
+aiSettings.addInterpreterEntry          ArmedCar    CarMoveTo
+aiSettings.addInterpreterEntry          ArmedCar    CarMoveToObject
+aiSettings.addInterpreterEntry          ArmedCar    Trigger
+aiSettings.addInterpreterEntry          ArmedCar    TriggerContinously
+aiSettings.addInterpreterEntry          ArmedCar    MouseTurretAimAt
+aiSettings.addInterpreterEntry          ArmedCar    MouseTurretLookAt
+aiSettings.addInterpreterEntry          ArmedCar    Sense
+aiSettings.addSensingAgentPattern       ArmedCar    Turret
+aiSettings.setVehicleDefaultBehaviour   ArmedCar    Idle
+
+aisettings.setVehicleMods               ManDown UnitWeights
+aiSettings.setVehicleBehaviour          ManDown Idle    BBIdle  BBPIdle2d   2   UCUnion UnitWeights
+aiSettings.addInterpreterEntry          ManDown Trigger
+aiSettings.addInterpreterEntry          ManDown InfanteryResetControls
+aiSettings.addSensingAgentPattern       ManDown Null
+aiSettings.setVehicleDefaultBehaviour   ManDown Idle
+
+rem *** ParatrooperFixed Behaviour setup ***
+aisettings.setVehicleMods               ParatrooperFixed    StandardWeights
+aiSettings.setVehicleBehaviour          ParatrooperFixed    Idle    BBIdle                  BBPIdle2d           5   UCUnion StandardWeights
+aiSettings.setVehicleBehaviour          ParatrooperFixed    Fire    BBFireInfantery		    BBPFireInfantery    4   UCFire  StandardWeights
+aiSettings.setVehicleBehaviour          ParatrooperFixed    Change  BBChangeLandingCraft    BBPChange           6   UCUnion StandardWeights
+aiSettings.addInterpreterEntry          ParatrooperFixed    InfoWrapper
+aiSettings.addInterpreterEntry          ParatrooperFixed    Trigger
+aiSettings.addInterpreterEntry          ParatrooperFixed    TriggerContinously
+aiSettings.addInterpreterEntry          ParatrooperFixed    MouseTurretAimAt
+aiSettings.addInterpreterEntry          ParatrooperFixed    MouseTurretLookAt
+aiSettings.addInterpreterEntry          ParatrooperFixed    Sense
+aiSettings.addInterpreterEntry          ParatrooperFixed    InfanteryResetControls
+aiSettings.addSensingAgentPattern       ParatrooperFixed    Turret
+aiSettings.setVehicleDefaultBehaviour   ParatrooperFixed    Idle

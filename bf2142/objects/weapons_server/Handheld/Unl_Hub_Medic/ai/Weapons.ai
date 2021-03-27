@@ -1,0 +1,6 @@
+rem *** Add MedicHub ***
+weaponTemplate.create MedicHub
+weaponTemplate.weaponType Healing
+weaponTemplate.minRange 0.0
+weaponTemplate.maxRange 70.0
+

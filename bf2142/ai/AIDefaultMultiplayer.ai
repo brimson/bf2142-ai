@@ -1,0 +1,14 @@
+rem *****************************************************************************************
+rem AIDefaultMultiplayer.ai ****************************************************************************
+rem *****************************************************************************************
+
+aiSettings.setNSides 2
+aiSettings.setAutoSpawnBots 0
+
+aiSettings.overrideMenuSettings 1
+aiSettings.setMaxNBots 0
+aiSettings.setMaxNAutoControllers 256
+
+aiSettings.setInformationGridDimension 32
+
+run AutoControllers.ai

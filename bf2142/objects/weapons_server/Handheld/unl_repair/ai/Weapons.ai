@@ -1,0 +1,4 @@
+rem *** Unl_Repair ***
+weaponTemplate.create Unl_Repair
+weaponTemplate.weaponType Repair
+weaponTemplate.maxRange 50.0
