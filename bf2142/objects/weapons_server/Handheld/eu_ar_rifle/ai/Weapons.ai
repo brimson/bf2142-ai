@@ -1,5 +1,6 @@
 rem *** Add EU_AR_RIFLE ***
 weaponTemplate.create eu_ar_rifle
+weaponTemplate.weaponType FireArm
 weaponTemplate.indirect 0
 weaponTemplate.minRange 0.0
 weaponTemplate.maxRange 72.0

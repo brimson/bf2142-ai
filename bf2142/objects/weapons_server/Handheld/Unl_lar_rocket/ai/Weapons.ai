@@ -1,5 +1,6 @@
 rem *** Add unl_lar_rocket ***
 weaponTemplate.create unl_lar_rocket
+weaponTemplate.weaponType FireArm
 weaponTemplate.indirect 0
 weaponTemplate.minRange 8.0
 weaponTemplate.maxRange 55.0

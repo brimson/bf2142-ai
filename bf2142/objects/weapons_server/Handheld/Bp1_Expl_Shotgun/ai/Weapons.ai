@@ -1,5 +1,6 @@
 rem *** Add Bp1_Expl_Shotgun ***
 weaponTemplate.create Bp1_Expl_Shotgun
+weaponTemplate.weaponType FireArm
 weaponTemplate.indirect 0
 weaponTemplate.minRange 8.0
 weaponTemplate.maxRange 55.0

@@ -1,5 +1,6 @@
 rem *** Add Bp1_Grenade_Radar ***
 weaponTemplate.create Bp1_Grenade_Radar
+weaponTemplate.weaponType FireArm
 weaponTemplate.indirect 0
 weaponTemplate.isThrown 1
 weaponTemplate.minRange 15.0

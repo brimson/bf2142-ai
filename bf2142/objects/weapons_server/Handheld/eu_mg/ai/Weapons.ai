@@ -1,5 +1,6 @@
 rem *** Add EU_MG ***
 weaponTemplate.create eu_mg
+weaponTemplate.weaponType FireArm
 weaponTemplate.indirect 0
 weaponTemplate.minRange 10.0
 weaponTemplate.maxRange 80.0

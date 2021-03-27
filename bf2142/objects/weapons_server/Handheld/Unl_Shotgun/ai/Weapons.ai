@@ -1,5 +1,6 @@
 rem *** Add Unl_Shotgun ***
 weaponTemplate.create Unl_Shotgun
+weaponTemplate.weaponType FireArm
 weaponTemplate.indirect 0
 weaponTemplate.minRange 0.0
 weaponTemplate.maxRange 35.0

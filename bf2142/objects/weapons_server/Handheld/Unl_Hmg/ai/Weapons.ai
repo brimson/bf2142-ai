@@ -1,5 +1,6 @@
 rem *** Add unl_hmg ***
 weaponTemplate.create unl_hmg
+weaponTemplate.weaponType FireArm
 weaponTemplate.indirect 0
 weaponTemplate.minRange 20.0
 weaponTemplate.maxRange 80.0

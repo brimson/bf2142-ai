@@ -1,5 +1,6 @@
 rem *** Add Unl_AV_Rifle ***
 weaponTemplate.create Unl_AV_Rifle
+weaponTemplate.weaponType FireArm
 weaponTemplate.indirect 0
 weaponTemplate.minRange 10.0
 weaponTemplate.maxRange 70.0

@@ -1,5 +1,6 @@
 rem *** Add Usrif_m16a2 ***
 weaponTemplate.create unl_lar_rifle
+weaponTemplate.weaponType FireArm
 weaponTemplate.indirect 0
 weaponTemplate.minRange 0.0
 weaponTemplate.maxRange 72.0

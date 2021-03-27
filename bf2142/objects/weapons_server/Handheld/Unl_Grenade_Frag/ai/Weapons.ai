@@ -1,5 +1,6 @@
 rem *** Add Unl_Grenade_Frag ***
 weaponTemplate.create Unl_Grenade_Frag
+weaponTemplate.weaponType FireArm
 weaponTemplate.shouldRearm 0
 weaponTemplate.indirect 0
 weaponTemplate.isThrown 1

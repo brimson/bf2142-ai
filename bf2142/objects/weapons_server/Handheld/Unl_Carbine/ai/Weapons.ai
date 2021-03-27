@@ -1,5 +1,6 @@
 rem *** Add Unl_Carbine ***
 weaponTemplate.create Unl_Carbine
+weaponTemplate.weaponType FireArm
 weaponTemplate.indirect 0
 weaponTemplate.minRange 0.0
 weaponTemplate.maxRange 72.0

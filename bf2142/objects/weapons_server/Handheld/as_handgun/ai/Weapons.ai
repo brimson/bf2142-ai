@@ -1,4 +1,5 @@
 weaponTemplate.create AS_Handgun
+weaponTemplate.weaponType FireArm
 weaponTemplate.indirect 0
 weaponTemplate.minRange 0.0
 weaponTemplate.maxRange 35.0

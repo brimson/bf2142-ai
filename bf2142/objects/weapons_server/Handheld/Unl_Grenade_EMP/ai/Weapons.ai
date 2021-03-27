@@ -1,5 +1,6 @@
 rem *** Add Unl_Grenade_EMP ***
 weaponTemplate.create Unl_Grenade_EMP
+weaponTemplate.weaponType FireArm
 weaponTemplate.indirect 0
 weaponTemplate.isThrown 1
 weaponTemplate.minRange 15.0

@@ -1,5 +1,6 @@
 rem *** Add Unl_Grenade_Smoke ***
 weaponTemplate.create Unl_Grenade_Smoke
+weaponTemplate.weaponType FireArm
 weaponTemplate.indirect 0
 weaponTemplate.isThrown 1
 weaponTemplate.minRange 15.0
