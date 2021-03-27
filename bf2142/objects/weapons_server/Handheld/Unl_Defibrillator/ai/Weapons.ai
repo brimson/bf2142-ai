@@ -1,4 +1,6 @@
 rem *** Unl_Defibrillator ***
 weaponTemplate.create Unl_Defibrillator
 weaponTemplate.weaponType Revive
+weaponTemplate.setFiringPose Crouching
+weaponTemplate.SoldierPose Lying
 weaponTemplate.maxRange 60.0

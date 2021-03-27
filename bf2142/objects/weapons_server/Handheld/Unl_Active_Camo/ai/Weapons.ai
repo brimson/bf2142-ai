@@ -1,3 +1,5 @@
 rem *** Unl_Active_Camo ***
 weaponTemplate.create Unl_Active_Camo
 weaponTemplate.weaponType Camouflage
+weaponTemplate.setFiringPose Crouching
+weaponTemplate.SoldierPose Lying

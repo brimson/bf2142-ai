@@ -7,11 +7,11 @@ weaponTemplate.isThrown 1
 weaponTemplate.minRange 15.0
 weaponTemplate.maxRange 55.0
 weaponTemplate.optimalRangePercentage 85
-weaponTemplate.setFiringPose Standing
+weaponTemplate.setFiringPose Crouching
 weaponTemplate.setStrength Infantry    3.0
 weaponTemplate.setStrength LightArmour 5.0
 weaponTemplate.setStrength HeavyArmour 0.2
-weaponTemplate.setStrength NavalArmour 0
+weaponTemplate.setStrength NavalArmour 0.0
 weaponTemplate.setStrength Helicopter  0.2
 weaponTemplate.setStrength AirPlane    0.2
 weaponTemplate.setSoundSphereRadius  30.0

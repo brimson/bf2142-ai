@@ -1,6 +1,8 @@
 rem *** Add AmmoHub ***
 weaponTemplate.create AmmoHub
 weaponTemplate.weaponType Ammo
+weaponTemplate.setFiringPose Crouching
+weaponTemplate.SoldierPose Lying
 weaponTemplate.minRange 0.0
 weaponTemplate.maxRange 70.0
 

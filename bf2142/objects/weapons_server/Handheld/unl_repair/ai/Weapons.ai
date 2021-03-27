@@ -1,4 +1,6 @@
 rem *** Unl_Repair ***
 weaponTemplate.create Unl_Repair
 weaponTemplate.weaponType Repair
+weaponTemplate.setFiringPose Crouching
+weaponTemplate.SoldierPose Lying
 weaponTemplate.maxRange 50.0

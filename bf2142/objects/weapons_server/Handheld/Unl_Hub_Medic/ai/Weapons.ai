@@ -1,6 +1,8 @@
 rem *** Add MedicHub ***
 weaponTemplate.create MedicHub
 weaponTemplate.weaponType Healing
+weaponTemplate.setFiringPose Crouching
+weaponTemplate.SoldierPose Lying
 weaponTemplate.minRange 0.0
 weaponTemplate.maxRange 70.0
 

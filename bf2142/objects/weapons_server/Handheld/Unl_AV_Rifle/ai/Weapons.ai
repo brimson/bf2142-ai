@@ -6,7 +6,8 @@ weaponTemplate.minRange 10.0
 weaponTemplate.maxRange 70.0
 weaponTemplate.optimalRangePercentage 85
 weaponTemplate.setFiringPose Crouching
-weaponTemplate.setStrength Infantry    0.0
+weaponTemplate.SoldierPose Lying
+weaponTemplate.setStrength Infantry    1.0
 weaponTemplate.setStrength LightArmour 6.0
 weaponTemplate.setStrength HeavyArmour 8.0
 weaponTemplate.setStrength NavalArmour 2.0
